@@ -1,0 +1,17 @@
+#N canvas 598 271 450 388 12;
+#X obj 36 35 adc~ 3;
+#X obj 39 189 mtof;
+#X text 33 13 G Sting;
+#X text 81 187 convert from midi to frequency;
+#X text 336 146 Detect Pitch as Midi;
+#X obj 39 147 sigmund~ -npts 512 -hop 1024 pitch notes;
+#X text 148 40 Set project block size to 4096;
+#X obj 38 237 osc~;
+#X obj 37 282 dac~ 3 4;
+#X obj 99 217 print;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
+#X connect 1 0 9 0;
+#X connect 5 0 1 0;
+#X connect 7 0 8 0;
+#X connect 7 0 8 1;
